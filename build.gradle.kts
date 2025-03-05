@@ -17,12 +17,6 @@ dependencies {
 }
 
 tasks.withType<Jar> {
-    manifest {
-//        attributes["Main-Class"] = "com.example.MainKt" // Your main class
-    }
-    configurations["compileClasspath"].forEach { file: File ->
-        from(zipTree(file.absoluteFile))
-    }
 }
 
 tasks.test {
