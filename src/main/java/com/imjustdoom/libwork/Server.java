@@ -192,7 +192,7 @@ public class Server implements EndPoint {
 
         this.selector = Selector.open();
         this.serverSocket = ServerSocketChannel.open();
-        this.serverSocket.bind(new InetSocketAddress("localhost", 5000)); // TODO: Make it randomly select a port if the default can't be used
+        this.serverSocket.bind(new InetSocketAddress("0.0.0.0", 5000)); // TODO: Make it randomly select a port if the default can't be used
         this.serverSocket.configureBlocking(false);
         this.serverSocket.register(this.selector, SelectionKey.OP_ACCEPT);
 
