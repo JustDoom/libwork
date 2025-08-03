@@ -124,7 +124,13 @@ public class Server implements EndPoint {
                     Connection connection = (Connection) key.attachment();
 
                     while (true) {
-                        Object packetObject = connection.read();
+                        Object packetObject = null;
+                        try {
+                            packetObject = connection.read();
+                        } catch (IOException exception) {
+                            connection.close();
+                            break;
+                        }
                         if (packetObject == null) break;
 
                         connection.submitReceived(packetObject);
