@@ -58,7 +58,11 @@ public class Connection {
 
         if (this.currentLength == 0) {
             int lengthLength = getSerialisation().getLengthLength();
-            if (!isMoreToRead(lengthLength)) return null;
+            try {
+                if (!isMoreToRead(lengthLength)) return null;
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
 
             this.currentLength = getSerialisation().readLength(this.readBuffer);
         }
