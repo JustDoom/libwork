@@ -1,3 +1,7 @@
+# No longer active
+
+I am not currently maintaining this anymore. It was a fun project but it had issues that were annoying. I have also just ended up using a websocket library (https://github.com/TooTallNate/Java-WebSocket) for web support as well
+
 # LibWork (LibGDX + Network)
 
 LibWork is a network library based on [KryoNet](https://github.com/crykn/kryonet) for my own Java/LibGDX projects.
